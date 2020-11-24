@@ -1,0 +1,61 @@
+SyxOs boot in progress...    
+testing memory
+checking devices
+loading vmunix
+
+Urizen Ur-Unix Version 17.4.2: Fri Apr 24 23 20:32:54 GMT 1998 
+Copyright (c) 1998 Blakewill Computer, Ltd.     Copyright for OS. 
+Copyright (c) 1986 Sun Microsystems, Inc.       Subsystem copyrights.
+Copyright (c) 1989-1998 Open Software Foundation, Inc. 
+... 
+Copyright (c) 1991 Massachusetts Institute of Technology 
+All rights reserved.
+    
+physical memory = 2.00 GB
+
+Searching SCSI bus for devices:
+rdisk0 bus 0 target 0 lun 0 
+rdisk1 bus 0 target 1 lun 0 
+rdisk2 bus 0 target 2 lun 0 
+rmt0 bus 0 target 4 lun 0 
+cdrom0 bus0 target 6 lun 0 
+Ethernet address=8:0:20:7:58:jk
+
+Root on /dev/disk0a
+Activating all paging spaces
+swapon: swap device /dev/disk0b activated. 
+Using /dev/disk0b as dump device
+    
+
+INIT: New run level: 3
+
+The system is coming up. Please wait.
+Tue Jul 14 14:45:28 EDT 1998    
+    
+Checking TCB databases
+Checking file systems:
+fsstat: /dev/rdisk1c (/home) umounted cleanly;  Skipping check. 
+fsstat: /dev/rdisk2c (/chem) dirty
+Running fsck: 
+/dev/rdisk2c: 1764 files, 290620 used, 110315 free 
+Mounting local file systems.
+
+Checking disk quotas: done.
+cron subsystem started, pid = 3387 
+System message logger started. 
+Accounting services started.
+
+Network daemons started: portmap inetd routed named rhwod timed. 
+NFS started: biod(4) nfsd(6) rpc.mountd rpc.statd rpc.lockd. 
+Mounting remote file systems. 
+Print subsystem started.
+sendmail started.
+
+Preserving editor files.
+Clearing /tmp.
+Enabling user logins.
+Tue Jul 14 14:47:45 EDT 1998
+    
+Urizen Ur-Unix 9.1 on hamlet
+    
+login:

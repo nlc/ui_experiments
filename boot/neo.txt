@@ -1,0 +1,31 @@
+nate@Nates-MBP.localdomain
+OS[0m[0m:[0m macOS Catalina 10.15.6 19G2021 x86_64[0m 
+Host[0m[0m:[0m MacBookPro14,3[0m 
+Kernel[0m[0m:[0m 19.6.0[0m 
+Uptime[0m[0m:[0m 1 day, 8 hours, 43 mins[0m 
+Packages[0m[0m:[0m 241 (brew)[0m 
+Shell[0m[0m:[0m bash 3.2.57[0m 
+Resolution[0m[0m:[0m 1440x900@2x[0m 
+DE[0m[0m:[0m Aqua[0m 
+WM[0m[0m:[0m Quartz Compositor[0m 
+WM Theme[0m[0m:[0m Blue (Dark)[0m 
+Terminal[0m[0m:[0m Apple_Terminal[0m 
+Terminal Font[0m[0m:[0m Menlo-Regular[0m 
+CPU[0m[0m:[0m Intel i7-7700HQ (8) @ 2.80GHz[0m 
+GPU[0m[0m:[0m Intel HD Graphics 630, Radeon Pro 555[0m 
+Memory[0m[0m:[0m 11068MiB / 16384MiB (67%)[0m 
+Battery[0m[0m:[0m 100% charged[0m 
+Weather[0m[0m:[0m 53..57°F (Overland Park, United States)[0m 
+
+
+    pi@raspberrypi
+ `+oooooooooooo:   `+oooooooooooo:    --------------
+  /oooo++//ooooo:  ooooo+//+ooooo.    OS: Raspbian GNU/Linux 8.0 (jessie) on Ch
+  `+ooooooo:-:oo-  +o+::/ooooooo:     Model: Raspberry Pi Model B Plus Rev 1.2
+   `:oooooooo+``    `.oooooooo+-      Kernel: 4.9.41+
+     `:++ooo/.        :+ooo+/.`       Uptime: 4 hours, 50 mins
+        ...`  `.----.` ``..           Packages: 490
+     .::::-``:::::::::.`-:::-`        Shell: bash 4.3.30
+    -:::-`   .:::::::-`  `-:::-       Terminal: /dev/pts/0
+   `::.  `.--.`  `` `.---.``.::`      CPU: ARMv6-compatible processor rev 7 (v6
+       .::::::::`  -::::::::` `       Memory: 111MiB / 481MiB

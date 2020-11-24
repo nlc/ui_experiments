@@ -1,0 +1,32 @@
+┌─┬─ [34mSyxOS[0m
+│ └─┬─ boot sequence [2m[[0m [32m........100%........[0m [2m][0m
+│   ├─── SyxOs Coven v. 1.0.7 ("Briefly, a Hush"): [2m[[0m 20XX-6-27 9:04 EST (99 days ago) [2m][0m
+│   ├─┬─ diagnostics:
+│   │ ├─── memory..........[32mOK[0m
+│   │ ├─── core temp.......[32mOK[0m
+│   │ ├─── disk............[32mOK[0m
+│   │ └─── peripheral......[33mNA[0m
+│   └─┬─ connections
+│     ├─┬─ local intranet: [32mCONNECTED[0m (3 other hosts online)
+│     │ └─── speed: 19.2 kbd
+│     └─── internet: [31mNO GATEWAY[0m
+│
+├─┬─ SyxOs 1.0.7 on temple2.host
+│ ├─── username[35m:[0m [7m│Brown   │[0m
+│ └─┬─ password[35m:[0m [7m│********│[0m
+│   └─── verifying.......[32mOK[0m
+│
+├─┬─ Welcome, Brown [2m[[0m FrBr@temple2.host [2m][0m
+│ ├─── id: 0x0840
+│ ├─── uflags: ADMIN PRIEST WHEEL HYPERVIS
+│ ├─── last login: [2m[[0m 20XX-10-03 14:51 EST (1 days ago) [2m][0m
+│ └─── no. of logins: 86
+│
+└─┬─[35m?[0m msgs
+  └─┬─ Message Queue ([37m2[0m)
+  [7m  ├─┬─ [1m165: "Budget Meeting"[22m                                  [0m
+    │ ├─── from: FrWh@temple1.host (0x0001)
+    │ └─── sent: [2m[[0m 20XX-10-04 12:13 EST (1 hours ago) [2m][0m
+    └─┬─ [1m161: "RE: Supply Chain"[0m
+      ├─── from: FrGr@temple6.host (0x711E)
+      └─── sent: [2m[[0m 20XX-10-04 10:21 EST (3 hours ago) [2m][0m
