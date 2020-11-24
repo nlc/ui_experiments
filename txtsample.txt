@@ -1,0 +1,32 @@
+If brute-force 
+analytical inversion 
+of a 107 × 107 matrix 
+is out of the 
+question, that is not, 
+however,    the end of 
+the story. First, as 
+is widely recognized, 
+there are iterative 
+approximation methods 
+which are    
+substantially more 
+efficient (the 
+Gauss–Seidel and 
+Jacobi methods—see 
+Varga, 1962). Here the 
+time-order is r*n^2,
+2    r, where r is the 
+number of iterations 
+required to produce a 
+satisfactory 
+approximation. With r 
+= 20,    repetition of 
+the above calculations 
+gives a running time 
+of 108    seconds, or 
+about 3 years. While 
+this now    looks 
+closer to feasibility, 
+it is still clearly 
+much too slow to be of 
+practical use.2 
