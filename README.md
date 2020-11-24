@@ -7,4 +7,4 @@ Like these loading bars, for example:
 
 And this handcrafted UI mockup (I was bored):
 
-<img src="https://github.com/nlc/ui_experiments/blob/master/screenschot.png?raw=true">
+<img width=400px src="https://github.com/nlc/ui_experiments/blob/master/screenshot.png?raw=true">
