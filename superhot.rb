@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Interface
   def get_files
     @files = Dir.children(@wd).sort
