@@ -123,8 +123,12 @@ echo -ne "\n      └─── sent: [2m[[0m 20XX-10-04 10:21 EST (3 hours ago
 sleep 0.2
 echo -ne "\r[5A  [7m"
 echo -ne "  ├─┬─ [1m165: "Budget Meeting"[22m                                  [0m"
-echo -ne "\r[6B"
-
+sleep 1
+echo -ne "\r    ├─┬─ [1m165: "Budget Meeting"[22m                                  [0m"
+sleep 0.2
+echo -ne "\r[3B  [7m"
+echo -ne "  └─── [1m161: "RE: Supply Chain"[22m                                [0m"
+echo -ne "\r[3B"
 
 sleep 5
 echo -ne "[?25h"
