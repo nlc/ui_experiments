@@ -53,7 +53,7 @@ flash_hex() {
 
   for i in $(seq 8); do
     # head -c$((256 + RANDOM % 256)) /dev/urandom | xxd -u |\
-    head -c512 /dev/urandom | xxd -u |\
+    head -c$(( ($(tput lines) - 1) * 16 )) /dev/urandom | xxd -u |\
       awk -v seed=$RANDOM '
         BEGIN{srand(seed);}
         NF>=10{
@@ -68,7 +68,7 @@ flash_hex() {
           printf("\n");
         }'
     sleep "0.$RANDOM"
-    echo -ne "\033[2J\033[H"
+    echo -ne "\033[H"
   done
 }
 
@@ -76,7 +76,9 @@ flash_hex() {
 os_splash() {
   echo -ne "\033[2J\033[H"
   echo -ne "\033[1m"
-  figlet "CybOS v. 1.21.9" | ruby ../code/sprinkle_cat/sprinkle_cat.rb
+  if $(type figlet &>/dev/null); then
+    figlet "CybOS v. 1.21.9" # | ruby ../code/sprinkle_cat/sprinkle_cat.rb
+  fi
   echo -ne "\033[0m"
   echo
   sleep 0.5
@@ -465,7 +467,8 @@ echo -ne "\033[0m"
 flash_hex
 
 # quick interstitial OK
-echo -e "0x0000000000000F00 OK"
+echo -ne "\033[2J\033[H"
+echo -e "0x0000000100C5600D OK"
 sleep 0.4
 
 os_splash
