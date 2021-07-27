@@ -2,7 +2,7 @@ require 'byebug'
 
 class Interface
   def get_files
-    @files = Dir.children(@wd)
+    @files = Dir.children(@wd).sort
   end
 
   def initialize(w, h)
@@ -79,7 +79,7 @@ class Interface
     cls
     draw_text_box(1, 1, @wd)
 
-    draw_box(1, 4, @w, @h, '.')
+    draw_box(1, 4, @w, @h, '·')
 
     draw_text_box(4, 6, @files[0..9].join("\n"))
 
