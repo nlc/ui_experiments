@@ -11,6 +11,7 @@ patternlen=${#pattern[@]}
 numcycles=$1
 
 moveforward=1
+changecolors=1
 
 echo -ne "\033[?25l"
 
@@ -19,9 +20,16 @@ for t in $(seq $(($numcycles * $patternlen))); do
   echo -ne "\b${poses[$patternindex]}"
   sleep 0.2
 
-  if [[ "$moveforward" -eq 1 ]] && (($t % $patternlen == 0)); then
-    echo -ne "\b  "
+  if (($t % $patternlen == 0)); then
+    if [[ "$moveforward" -eq 1 ]]; then
+      echo -ne "\b  "
+    fi
+
+    if [[ "$changecolors" -eq 1 ]]; then
+      echo -ne "\033[$((31 + RANDOM % 7))m"
+    fi
   fi
 done
 
+echo -ne "\033[0m"
 echo -e "\033[?25h"
