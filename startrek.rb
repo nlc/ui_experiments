@@ -6,11 +6,11 @@ def generate_line
   s = rand(0.0..60.0)
   suffix =
     if rand < 0.05
-      %w[a b e r].sample
+      %w[a b e r *].sample
     else
       ' '
     end
-  number1 = ((rand 20..800) / 8) * 8 - (rand < 0.01 ? 1 : 0)
+  number1 = ((rand 20..800) / 8) * 8 - (rand < 0.05 ? 1 : 0)
   keyword = %w[FWS RET XXR DTM PLI X10 EXO GRN APP ELE PWR TSR SRS NFA QRY ADV NUL COM ADV REG APL].sample
   hash = 32.times.map{'0123456789abcdef'.chars.sample}.join
   sep =
@@ -89,7 +89,7 @@ def list_and_scroll_hl
     sleep rand(0.1..0.3)
 
     num_lines = rand(5..25)
-    lines = num_lines.times.map { generate_line }
+    lines = num_lines.times.map { generate_line }.sort
 
     lines.each do |line|
       puts line
@@ -123,6 +123,10 @@ def list_and_scroll_hl
 rescue Interrupt
   print "\033[2J\033[H"
   print "\033[?25h"
+end
+
+def big_letters
+  big_p = [0, 1, 2, 3, 4, 5, 9, 10, 14, 15, 16, 17, 18, 19, 20]
 end
 
 list_and_scroll_hl
