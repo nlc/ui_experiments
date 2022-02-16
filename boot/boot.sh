@@ -166,7 +166,7 @@ subsystem_boot_anim() {
   echo -e "COMMS  :"
   echo -e "CONNECT:"
   echo -e "NAVIGTN:"
-  echo -e "EARLYWN:"
+  echo -e "ERLYWRN:"
   echo -e "LIGHTS :"
   echo -e "CLIMATE:"
   echo -ne "\033[0m"
@@ -180,7 +180,7 @@ subsystem_boot_anim() {
   load_subsystem "COMMS  :"
   load_subsystem "CONNECT:"
   load_subsystem "NAVIGTN:"
-  load_subsystem "EARLYWN:"
+  load_subsystem "ERLYWRN:"
   load_subsystem "LIGHTS :"
   load_subsystem "CLIMATE:"
 
@@ -427,7 +427,7 @@ monitor_loc() {
   monitor_newline
   printf "     Altitude %04d m" "$altitude"
   monitor_newline
-  printf "     Heading  %03s (% 2s) @ %06.3f m/s ⣷⣼⣄⣼" "$heading" "$heading_string" "$velocity"
+  printf "     Heading  %03s (% 2s) @ %06.3f m/s ⣷⣼⣄" "$heading" "$heading_string" "$velocity"
 }
 
 # monitor screen (indefinite)
@@ -493,9 +493,6 @@ monitor_screen() {
 }
 
 echo -ne "\033[0m"
-
-monitor_screen
-sleep 10
 
 flash_hex
 
