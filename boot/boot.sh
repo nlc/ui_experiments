@@ -7,6 +7,8 @@
 #   second splash screen
 #   monitor screen (indefinite)
 
+BOOT_ANIM_LOADING_BAR_MODE="edgeless"
+
 progress_bar() {
   local numerator="$1"
   local denominator="$2"
@@ -27,18 +29,37 @@ progress_bar() {
   # hide cursor while writing so it doesn't "wobble"
   echo -ne "\033[?25l"
 
-  echo -ne " ["
-  echo -ne "\033[7m"
-  if [[ "$num_filled" -gt 0 ]]; then
-    for i in $(seq $num_filled); do
-      echo -ne " "
-    done
+  if [[ "$BOOT_ANIM_LOADING_BAR_MODE" = "edgeless" ]]; then
+    echo -ne "  "
+    echo -ne "\033[7m"
+    if [[ "$num_filled" -gt 0 ]]; then
+      for i in $(seq $num_filled); do
+        echo -ne " "
+      done
+    fi
+    echo -ne "\033[27;40m"
+    if [[ "$num_unfilled" -gt 0 ]]; then
+      for i in $(seq $num_unfilled); do
+        echo -ne " "
+      done
+    fi
+    echo -ne "\033[0m"
+    echo -ne " "
+  else
+    echo -ne " ["
+    echo -ne "\033[7m"
+    if [[ "$num_filled" -gt 0 ]]; then
+      for i in $(seq $num_filled); do
+        echo -ne " "
+      done
+    fi
+
+    echo -ne "\033[27m"
+    if [[ "$num_unfilled" -gt 0 ]]; then
+      echo -ne "\033[$num_unfilled""C"
+    fi
+    echo -ne "]"
   fi
-  echo -ne "\033[27m"
-  if [[ "$num_unfilled" -gt 0 ]]; then
-    echo -ne "\033[$num_unfilled""C"
-  fi
-  echo -ne "]"
 
   # unhide cursor
   echo -ne "\033[?25h"
@@ -369,7 +390,9 @@ monitor_signal() {
 
 monitor_loc() {
   local grid_square="$1"
-  local heading="$2"
+  local altitude="$2"
+  local heading="$3"
+  local velocity="$4"
   local heading_string=""
   local nn_string="N"
   local ne_string="NE"
@@ -400,7 +423,11 @@ monitor_loc() {
     heading_string="$nn_string"
   fi
 
-  printf "\033[1mLOC\033[0m: Sector %s | Heading % 3s (% 2s)" "$grid_square" "$heading" "$heading_string"
+  printf "\033[1mLOC\033[0m: Sector   %s" "$grid_square"
+  monitor_newline
+  printf "     Altitude %04d m" "$altitude"
+  monitor_newline
+  printf "     Heading  %03s (% 2s) @ %06.3f m/s ⣷⣼⣄⣼" "$heading" "$heading_string" "$velocity"
 }
 
 # monitor screen (indefinite)
@@ -443,8 +470,11 @@ monitor_screen() {
   # location
   local alphabet=$(echo {A..Z} | tr -d ' ')
   local grid_char=${alphabet:$((RANDOM % 26)):1}
-  grid_coord=$(printf "%s:%02d" "$grid_char" "$((RANDOM % 26 + 1))")
-  monitor_loc "$grid_coord" "$((RANDOM % 360))"
+  local grid_coord=$(printf "%s:%02d" "$grid_char" "$((RANDOM % 26 + 1))")
+  local altitude=$((60 + RANDOM % 600))
+  local heading="$((RANDOM % 360))"
+  local velocity="$((1 + RANDOM % 19)).$((RANDOM % 10000))"
+  monitor_loc "$grid_coord" "$altitude" "$heading" "$velocity"
 
   # sensor contacts
   # lights on or off
@@ -463,6 +493,9 @@ monitor_screen() {
 }
 
 echo -ne "\033[0m"
+
+monitor_screen
+sleep 10
 
 flash_hex
 
