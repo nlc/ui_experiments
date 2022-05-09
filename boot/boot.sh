@@ -154,7 +154,10 @@ subsystem_boot_anim() {
     progress_bar "$i" 20 20
     sleep "0.$((RANDOM % 2))"
   done
+  sleep 0.5
+
   echo -ne "\033[2J\033[H"
+  sleep 0.8
 
   echo -e "\033[1;5m        SUBSYSTEM CONTROL BOOT        \033[0m"
 
@@ -173,6 +176,7 @@ subsystem_boot_anim() {
 
   echo -ne "\033[10A\r"
 
+  sleep 0.5
   load_subsystem "MAINPWR:"
   load_subsystem "SERVOS :"
   load_subsystem "SENSORS:"
@@ -211,7 +215,7 @@ prog_splash() {
 
 draw_frame() {
   local in_width=40
-  local in_height=20
+  local in_height=15
   echo -ne "\033[7m"
   for i in $(seq $((in_width + 2))); do
     echo -n " "
